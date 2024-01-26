@@ -20,7 +20,7 @@ const DesignSession = () => {
       <div className="text-[#222] text-[24px] font-bold leading-[24px] mb-10">
         <h3>What is a Design Session ?</h3>
       </div>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full flex-col lg:flex-row gap-5">
         {DesignItem.map((item) => (
           <div
             key={item.title}

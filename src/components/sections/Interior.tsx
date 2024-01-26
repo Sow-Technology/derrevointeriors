@@ -65,11 +65,11 @@ const InteriorItem = [
 ];
 const Interior = () => {
   return (
-    <div className="flex flex-col items-center justify-center max-w-7xl my-10 mx-auto px-[73px] py-10 bg-[rgba(97,131,101,0.10)] rounded-[36px]">
+    <div className="flex flex-col items-center justify-center max-w-7xl my-10 mx-auto px-2 lg:px-[73px] py-10 bg-[rgba(97,131,101,0.10)] rounded-[36px]">
       <div className="text-[#222] text-[24px] font-bold leading-[24px] mb-10">
         <h3>End-to-end interior solutions</h3>
       </div>
-      <div className="flex items-center justify-start w-full flex-wrap gap-[10px] lg:gap-x-[159px] lg:gap-y-[60px]">
+      <div className="flex items-center justify-start w-full flex-wrap gap-[10px] lg:gap-x-[159px] lg:gap-y-[60px] mb-[68px]">
         {InteriorItem.map((item) => (
           <div
             key={item.title}
@@ -88,7 +88,9 @@ const Interior = () => {
           </div>
         ))}
       </div>
-      <Button variant="primary">BOOK FREE DESIGN SESSION</Button>
+      <Button variant="primary" className="px-[30px] py-[16px] font-bold">
+        BOOK FREE DESIGN SESSION
+      </Button>
     </div>
   );
 };

@@ -24,11 +24,11 @@ const Product = () => {
           transforming your interiors into a masterpiece.
         </h3>
       </div>
-      <div className="flex justify-between gap-[13px]">
+      <div className="flex justify-between gap-[30px] md:gap-[13px] md:flex-row flex-col items-center">
         {ProductItem.map((item) => (
           <div
             key={item.title}
-            className="flex w-1/2 shadow-2xl border p-[41px] gap-[26px]"
+            className="flex md:w-1/2 w-full md:shadow-2xl shadow-lg border p-[41px] gap-[26px]"
           >
             <div className="flex flex-col gap-[13px]">
               <Image
@@ -36,14 +36,14 @@ const Product = () => {
                 alt=""
                 height={60}
                 width={72}
-                className="h-[60px] w-[72px]"
+                className="min-h-[60px] min-w-[72px]"
               />
               <Image
                 src={item.icon2}
                 alt=""
                 height={54}
                 width={54}
-                className="h-[54px] w-[54px]"
+                className="min-h-[54px] min-w-[54px]"
               />
             </div>
             <div className="flex items-start justify-between flex-col text-left">

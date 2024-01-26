@@ -22,7 +22,7 @@ const Hero = () => {
   const form = useForm();
 
   return (
-    <div className="flex max-w-7xl mx-auto items-start justify-center py-20 lg:gap-[125px] h-max">
+    <div className="flex max-w-7xl mx-auto items-center gap-[30px] lg:items-start justify-center py-20 lg:gap-[125px] h-max flex-col lg:flex-row">
       <div className="px-10 flex items-center justify-center h-full my-auto">
         <Image
           src="/hero.svg"
@@ -37,7 +37,7 @@ const Hero = () => {
           Meet a designer
         </h4>
         <Form {...form}>
-          <form className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm min-w-[400px]">
+          <form className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm md:min-w-[400px]">
             <FormField
               control={form.control}
               name="name"
@@ -128,7 +128,7 @@ const Hero = () => {
             />
             <Button
               type="submit"
-              className="bg-[#618365] hover:bg-[#618365]/80 rounded-[6px]border border-solid border-[rgba(231,28,36,0.00)] w-full"
+              className="bg-[#618365] hover:bg-[#618365]/80 rounded-[6px]border border-solid border-[rgba(231,28,36,0.00)] w-full py-[11px]"
             >
               Book Design Session
               <span className="bg-[#FFC700] text-[#1E1E1E] rounded-[2px] py-1 px-2.5 font-bold tracking-[-0.12px] leading-[10px] text-[10px] ml-[12.5px]">

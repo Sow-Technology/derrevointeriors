@@ -6,13 +6,14 @@ import DesignSession from "@/components/sections/DesignSession";
 import Hero from "@/components/sections/Hero";
 import Interior from "@/components/sections/Interior";
 import Product from "@/components/sections/Product";
+import Steps from "@/components/sections/Steps";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 2000);
+    setTimeout(() => setIsLoading(false), 500);
   });
   if (isLoading) return <Loading />;
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <WhyChooseUs />
       <DesignSession />
       <Interior />
+      <Steps />
       <Footer />
     </div>
   );

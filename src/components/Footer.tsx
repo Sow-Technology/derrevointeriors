@@ -25,8 +25,8 @@ const SocialIcons = [
 ];
 const Footer = () => {
   return (
-    <div className="max-w-7xl mx-auto px-[100px]">
-      <div className="flex items-center justify-between gap-[80px]">
+    <div className="max-w-7xl mx-auto px-4 lg:px-[100px]">
+      <div className="flex items-center justify-between gap-[80px] flex-col-reverse lg:flex-row">
         <div className="leading-[30px] text-xs text-[#000]">
           <div>
             <h4 className="text-[#212529] text-[15px] font-bold ">Derrevo</h4>
