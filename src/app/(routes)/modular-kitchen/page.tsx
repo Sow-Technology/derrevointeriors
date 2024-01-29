@@ -28,11 +28,40 @@ const Page = () => {
   );
 
   return (
-    <div className="relative overflow-x-clip ">
-      <div ref={targetRef} className="min-h-screen">
-        <motion.div className="z-10 fixed w-full" style={{ position: navpos }}>
-          <Navbar cutsomPage={true} />
-        </motion.div>
+    <>
+      <div className="relative overflow-x-clip lg:block hidden">
+        <div ref={targetRef} className="min-h-screen">
+          <motion.div
+            className="z-10 fixed w-full"
+            style={{ position: navpos }}
+          >
+            <Navbar cutsomPage={true} />
+          </motion.div>
+          <motion.div
+            className={`${
+              opacity.get() == 0 ? "relative" : "sticky"
+            } h-screen w-screen bg-[url(/pages/1.jpg)] bg-top bg-cover inset-0 -z-10`}
+            // style={{ position }}
+          />
+          <motion.div
+            className="sticky h-screen w-screen bg-[url(/pages/2.svg)] bg-top bg-cover inset-0 -z-[8]"
+            initial={{ scale: 0, opacity: 1 }}
+            style={{ scale, opacity }}
+          />
+          <motion.div
+            style={{ opacity: hOpacity, position: hpos }}
+            className="text-black text-4xl font-bold drop-shadow-lg fixed top-[40%] left-1/2 m-auto"
+          >
+            Modular Kitchen
+          </motion.div>
+        </div>
+
+        <div className="bg-white">
+          <Footer />
+        </div>
+      </div>
+      <div className="block lg:hidden">
+        <Navbar />
         <motion.div
           className={`${
             opacity.get() == 0 ? "relative" : "sticky"
@@ -40,22 +69,14 @@ const Page = () => {
           // style={{ position }}
         />
         <motion.div
-          className="sticky h-screen w-screen bg-[url(/pages/2.svg)] bg-top bg-cover inset-0 -z-[8]"
-          initial={{ scale: 0, opacity: 1 }}
-          style={{ scale, opacity }}
-        />
-        <motion.div
           style={{ opacity: hOpacity, position: hpos }}
-          className="text-black text-2xl font-bold drop-shadow-lg fixed top-1/2 left-1/2 m-auto"
+          className="text-black text-4xl font-bold drop-shadow-lg absolute mb-10 top-[30%] left-1/2 m-auto"
         >
           Modular Kitchen
         </motion.div>
-      </div>
-
-      <div className="bg-white">
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
