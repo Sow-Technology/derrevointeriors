@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import {
   Form,
@@ -17,9 +17,47 @@ import { Switch } from "@/components/ui/switch";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
+type RefCallBack = (instance: HTMLButtonElement | null) => void;
+
+interface SwitchProps {
+  onChange: (...event: any[]) => void;
+  value: boolean;
+  disabled?: boolean;
+  name: string;
+  ref: RefCallBack;
+}
 
 const Hero = () => {
-  const form = useForm();
+  const { handleSubmit, register } = useForm();
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: "Name must be atleast 2 characters",
+    }),
+    email: z.string().email({
+      message: "Please enter a valid email address",
+    }),
+    mobileNumber: z.number().refine((value) => value.toString.length === 10, {
+      message: "Mobile number should contain 10 digits",
+    }),
+
+    whatsapp: z.string(),
+    pincode: z.number(),
+  });
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+  });
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    // Extract specific values from data
+    const { name, email, mobileNumber, whatsapp } = data as {
+      name: string;
+      email: string;
+      mobileNumber: string;
+      whatsapp: boolean;
+    };
+
+    // Your custom submission logic
+    console.log({ name, email, mobileNumber, whatsapp });
+  };
 
   return (
     <div className="flex max-w-7xl mx-auto items-center gap-[30px] lg:items-start justify-center py-20 lg:gap-[125px] h-max flex-col lg:flex-row">
@@ -78,17 +116,11 @@ const Hero = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <div className="relative mt-2.5 w-full flex justify-between">
-                      <div className=" flex items-center w-1/5">
-                        <select
-                          id="country"
-                          name="country"
-                          className="h-full  bg-transparent bg-none py-0  text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                        >
-                          <option>US</option>
-                          <option>CA</option>
-                          <option>EU</option>
-                        </select>
+                    <div className="relative mt-2.5 w-full flex justify-between gap-2">
+                      <div className=" flex items-center justify-center w-1/5">
+                        <span className="h-full text-center  bg-transparent bg-none py-0  text-gray-400 focus:ring-2 flex items-center justify-center focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                          IN +91
+                        </span>
                       </div>
                       <Input
                         type="tel"
@@ -96,6 +128,7 @@ const Hero = () => {
                         name="phone-number"
                         placeholder="Enter your mobile number"
                         id="phone-number"
+                        pattern="[0-9]{10}"
                         autoComplete="tel"
                         className="placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm w-4/5"
                       />
@@ -116,12 +149,29 @@ const Hero = () => {
                       <span className="font-bold text-[11px] leading-[13px] text-[#616161]">
                         You can reach me on WhatsApp
                       </span>
-                      <Switch {...field} defaultChecked />
+                      <Switch {...field} />
                     </div>
                   </FormControl>
                   <FormDescription className="text-[10px] lato-med text-[#a7a7a7] leading-[12px]">
                     Uncheck to opt-out of upcoming meetings and offer alerts
                   </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="pincode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your current residence pincode"
+                      {...field}
+                      className=" placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm"
+                    />
+                  </FormControl>
+
                   <FormMessage />
                 </FormItem>
               )}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 const InteriorItem = [
   {
     title: "Modular Kitchen",
@@ -66,21 +67,21 @@ const InteriorItem = [
 const Interior = () => {
   return (
     <div className="flex flex-col items-center justify-center max-w-7xl my-10 mx-auto px-2 lg:px-[73px] py-10 bg-[rgba(97,131,101,0.10)] rounded-[36px]">
-      <div className="text-[#222] text-[24px] font-bold leading-[24px] mb-10">
+      <div className="text-[#222] text-[24px] font-bold leading-[24px] mb-10 px-10">
         <h3>End-to-end interior solutions</h3>
       </div>
-      <div className="flex items-center justify-start w-full flex-wrap gap-[10px] lg:gap-x-[159px] lg:gap-y-[60px] mb-[68px]">
+      <div className="flex items-center justify-betweens lg:justify-start w-full flex-wrap gap-[20px] lg:gap-x-[159px] lg:gap-y-[60px] mb-[68px]">
         {InteriorItem.map((item) => (
           <div
             key={item.title}
-            className="flex items-center justify-center flex-col gap-1 h-[130px] w-[150px]"
+            className="flex items-center justify-center flex-col gap-1 h-[130px] w-[120px] md:w-[150px] p-2"
           >
             <Image
               src={item.icon}
               alt=""
               width={100}
               height={150}
-              className="w-[100px] max-h-[61px]"
+              className="w-[70px] md:w-[100px] max-h-[61px]"
             />
             <span className="text-[#222] text-sm lato-med text-center leading-[17px]">
               {item.title}
@@ -88,9 +89,11 @@ const Interior = () => {
           </div>
         ))}
       </div>
-      <Button variant="primary" className="px-[30px] py-[16px] font-bold">
-        BOOK FREE DESIGN SESSION
-      </Button>
+      <Link href="/estimate">
+        <Button variant="primary" className="px-[30px] py-[16px] font-bold">
+          BOOK FREE DESIGN SESSION
+        </Button>
+      </Link>
     </div>
   );
 };

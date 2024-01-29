@@ -49,9 +49,22 @@ const Steps: React.FC = () => {
   ];
 
   const [active, setActive] = useState<number>(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setActive((prevActive) => (prevActive + 1) % stepsItem.length);
+    }, 3000);
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [stepsItem.length]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto overflow-hidden my-20">
       <div>
         <h3 className="text-[#222] text-center text-2xl font-bold mb-[69px]">
           Transform your entire home interior with just 3 simple steps.
@@ -88,7 +101,7 @@ const Steps: React.FC = () => {
         </div>
       </div>
       <div>
-        <div className="mt-10 lg:mt-0 lg:mb-[69px]">
+        <div className="mt-20 lg:mt-0 lg:mb-[69px]">
           <Carousel images={images} />
         </div>
         <div>

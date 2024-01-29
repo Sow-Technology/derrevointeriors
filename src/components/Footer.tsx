@@ -12,7 +12,7 @@ const SocialIcons = [
   },
   {
     icon: "/social/yt.svg",
-    href: "",
+    href: "https://www.youtube.com/@derrevo.",
   },
   {
     icon: "/social/linkedin.svg",
@@ -20,7 +20,11 @@ const SocialIcons = [
   },
   {
     icon: "/social/instagram.svg",
-    href: "",
+    href: "https://www.instagram.com/derrevo.int.22",
+  },
+  {
+    icon: "/social/pinterest.svg",
+    href: "https://in.pinterest.com/derrevointerior/",
   },
 ];
 const Footer = () => {
@@ -30,10 +34,6 @@ const Footer = () => {
         <div className="leading-[30px] text-xs text-[#000]">
           <div>
             <h4 className="text-[#212529] text-[15px] font-bold ">Derrevo</h4>
-            <div className=" hover:scale-110 transition-transform inline-block">
-              <Link href="">Team</Link>
-            </div>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
             <div className=" hover:scale-110 transition-transform inline-block">
               <Link href="" className=" hover:scale-105 transition-transform">
                 Join Us
@@ -47,7 +47,10 @@ const Footer = () => {
             </div>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <div className=" hover:scale-110 transition-transform inline-block">
-              <Link href="" className=" hover:scale-105 transition-transform">
+              <Link
+                href="/estimate"
+                className=" hover:scale-105 transition-transform"
+              >
                 Get Estimate
               </Link>
             </div>
@@ -60,12 +63,6 @@ const Footer = () => {
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <div className=" hover:scale-110 transition-transform inline-block">
               <Link href="" className=" hover:scale-105 transition-transform">
-                Refer and Earn
-              </Link>
-            </div>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <div className=" hover:scale-110 transition-transform inline-block">
-              <Link href="" className=" hover:scale-105 transition-transform">
                 Book Virtual Meeting
               </Link>
             </div>
@@ -73,12 +70,6 @@ const Footer = () => {
             <div className=" hover:scale-110 transition-transform inline-block">
               <Link href="" className=" hover:scale-105 transition-transform">
                 Modular Kitchen Cost
-              </Link>
-            </div>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <div className=" hover:scale-110 transition-transform inline-block">
-              <Link href="" className=" hover:scale-105 transition-transform">
-                Calculator
               </Link>
             </div>
             &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -152,13 +143,15 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <Image
-            src="/logo.svg"
-            alt=""
-            height={257}
-            width={216}
-            className="h-[257px] w-[216px]"
-          />
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt=""
+              height={257}
+              width={216}
+              className="h-[257px] w-[216px]"
+            />
+          </Link>
         </div>
       </div>
       <div className="flex gap-x-[17px] my-[23px] items-center justify-end">

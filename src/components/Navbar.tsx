@@ -48,13 +48,15 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
   return (
     <div className="flex justify-between items-center mx-auto max-w-7xl py-5 relative px-7">
       <div className="flex items-center justify-center h-full">
-        <Image
-          src="/logo.webp"
-          alt="logo"
-          height={94}
-          width={79}
-          className="h-[94px] w-[79px]"
-        />
+        <Link href="/">
+          <Image
+            src="/logo.webp"
+            alt="logo"
+            height={94}
+            width={79}
+            className="h-[94px] w-[79px]"
+          />
+        </Link>
       </div>
       <div className="hidden lg:flex flex-col items-end gap-[26px] ">
         <div className="flex items-center text-[#E71C24] text-xs font-[500] leading-[22px] tracking-[-0.12px] gap-[2.2px] cursor-pointer hover:scale-105 transition-transform">
@@ -107,7 +109,9 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
           ))}
         </div>
         <div>
-          <Button variant="primary">Get Free Estimate</Button>
+          <Link href="/estimate">
+            <Button variant="primary">Get Free Estimate</Button>
+          </Link>
         </div>
       </div>
       <div

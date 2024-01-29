@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 const ProductItem = [
   {
     icon1: "/product/1.svg",
@@ -17,7 +18,7 @@ const ProductItem = [
 ];
 const Product = () => {
   return (
-    <div className="flex max-w-7xl mx-auto text-center flex-col bg-[rgba(97,131,101,0.10)] py-[44px] px-[50px] gap-[35px] rounded-[36px]">
+    <div className="flex max-w-7xl mx-auto text-center flex-col bg-[rgba(97,131,101,0.10)] py-[44px] px-[30px] md:px-[50px] gap-[35px] rounded-[36px]">
       <div className="max-w-[544px] text-[#000] text-[24px] font-bold leading-normal mx-auto ">
         <h3>
           Elevate your space! Request a home estimate and discover the cost of
@@ -28,7 +29,7 @@ const Product = () => {
         {ProductItem.map((item) => (
           <div
             key={item.title}
-            className="flex md:w-1/2 w-full md:shadow-2xl shadow-lg border p-[41px] gap-[26px]"
+            className="flex md:w-1/2 w-full md:shadow-2xl shadow-lg border  p-[20px] md:p-[41px] gap-[15px] md:gap-[26px]"
           >
             <div className="flex flex-col gap-[13px]">
               <Image
@@ -53,9 +54,11 @@ const Product = () => {
               <p className="text-[#333] text-base font-normal leading-[24px]">
                 {item.description}
               </p>
-              <Button variant="primary" className="mt-[22px]">
-                Get Free Estimate
-              </Button>
+              <Link href="/estimate">
+                <Button variant="primary" className="mt-[22px]">
+                  Get Free Estimate
+                </Button>
+              </Link>
             </div>
           </div>
         ))}
