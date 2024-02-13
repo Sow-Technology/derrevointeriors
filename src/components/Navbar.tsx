@@ -87,9 +87,9 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
             <path
               d="M8.8074 7.39606L5.59908 10.6044L2.39075 7.39606"
               stroke="#E71C24"
-              stroke-width="1.375"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.375"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -150,9 +150,9 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
               <path
                 d="M8.8074 7.39606L5.59908 10.6044L2.39075 7.39606"
                 stroke="#E71C24"
-                stroke-width="1.375"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.375"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

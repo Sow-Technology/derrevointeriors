@@ -130,7 +130,10 @@ const Footer = () => {
             </div>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <div className=" hover:scale-110 transition-transform inline-block">
-              <Link href="" className=" hover:scale-105 transition-transform">
+              <Link
+                href="/terms-conditions"
+                className=" hover:scale-105 transition-transform"
+              >
                 Terms & Conditions
               </Link>
             </div>
