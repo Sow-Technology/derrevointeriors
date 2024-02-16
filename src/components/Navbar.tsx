@@ -46,7 +46,7 @@ const NavItem = [
 const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="flex justify-between items-center mx-auto max-w-7xl py-5 relative px-7">
+    <div className="flex justify-between items-center mx-auto max-w-7xl py-5 relative px-7  ">
       <div className="flex items-center justify-center h-full">
         <Link href="/">
           <Image
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
         </Link>
       </div>
       <div className="hidden lg:flex flex-col items-end gap-[26px] ">
-        <div className="flex items-center text-[#E71C24] text-xs font-[500] leading-[22px] tracking-[-0.12px] gap-[2.2px] cursor-pointer hover:scale-105 transition-transform">
+        <div className="flex items-center text-[#E71C24] text-xs font-[500] leading-[22px] tracking-[-0.12px] gap-[2.2px] cursor-pointer hover:scale-105 transition-transform bg-white rounded-3xl p-3 py-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="11"
@@ -94,8 +94,10 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
           </svg>
         </div>
         <div
-          className={` text-[13px] font-[500] leading-[22px] tracking-[-0.12px] gap-[25px] flex lato-med ${
-            cutsomPage ? "text-white" : "text-[#4A4A4A]"
+          className={` text-[13px] font-[500] leading-[22px] tracking-[-0.12px] gap-[25px] flex lato-med  ${
+            cutsomPage
+              ? "text-white bg-[#618365] p-3 px-7 rounded-3xl"
+              : "text-[#4A4A4A]"
           }`}
         >
           {NavItem.map((item) => (
@@ -122,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
       </div>
       {modalOpen && (
         <div className="glassmorphism p-5 top-14 right-32 flex flex-col absolute gap-5 px-10 rounded-lg">
-          <div className="flex items-center text-[#E71C24] text-xs font-[500] leading-[22px] tracking-[-0.12px] gap-[2.2px] cursor-pointer hover:scale-105 transition-transform">
+          <div className="flex items-center text-[#E71C24] text-xs font-[500] leading-[22px] tracking-[-0.12px] gap-[2.2px] cursor-pointer hover:scale-105 transition-transform ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="11"
