@@ -2,7 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+
 import * as z from "zod";
 import {
   Form,
@@ -17,18 +19,8 @@ import { Switch } from "@/components/ui/switch";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
-type RefCallBack = (instance: HTMLButtonElement | null) => void;
-
-interface SwitchProps {
-  onChange: (...event: any[]) => void;
-  value: boolean;
-  disabled?: boolean;
-  name: string;
-  ref: RefCallBack;
-}
 
 const Hero = () => {
-  const { handleSubmit, register } = useForm();
   const formSchema = z.object({
     name: z.string().min(2, {
       message: "Name must be atleast 2 characters",
@@ -36,31 +28,64 @@ const Hero = () => {
     email: z.string().email({
       message: "Please enter a valid email address",
     }),
-    mobileNumber: z.number().refine((value) => value.toString.length === 10, {
+    mobileNumber: z.string().refine((value) => value.length === 10, {
       message: "Mobile number should contain 10 digits",
     }),
 
-    whatsapp: z.string(),
-    pincode: z.number(),
+    whatsapp: z.boolean().default(true).optional(),
+    pincode: z.string(),
   });
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      mobileNumber: "",
+      whatsapp: true,
+      pincode: "",
+    },
   });
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    // Extract specific values from data
-    const { name, email, mobileNumber, whatsapp } = data as {
-      name: string;
-      email: string;
-      mobileNumber: string;
-      whatsapp: boolean;
-    };
+  const onSubmit = async (data) => {
+    toast.loading("Submitting!...", {
+      icon: "◌",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
 
+    // Extract specific values from data
+    const { name, email, mobileNumber, whatsapp, pincode } = data;
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      toast.dismiss();
+      toast("We will reach out to you soon!", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log("Error sending form data:", error);
+    }
     // Your custom submission logic
-    console.log({ name, email, mobileNumber, whatsapp });
+    console.log({ name, email, mobileNumber, whatsapp, pincode });
   };
 
   return (
     <div className="flex max-w-7xl mx-auto items-center gap-[30px] lg:items-start justify-center py-20 lg:gap-[125px] h-max flex-col lg:flex-row">
+      <Toaster />
       <div className="px-10 flex items-center justify-center h-full my-auto">
         <Image
           src="/hero.svg"
@@ -75,7 +100,10 @@ const Hero = () => {
           Meet a designer
         </h4>
         <Form {...form}>
-          <form className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm md:min-w-[400px]">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm md:min-w-[400px]"
+          >
             <FormField
               control={form.control}
               name="name"
@@ -144,14 +172,18 @@ const Hero = () => {
               name="whatsapp"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-[11px] leading-[13px] text-[#616161]">
-                        You can reach me on WhatsApp
-                      </span>
-                      <Switch {...field} />
-                    </div>
-                  </FormControl>
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-[11px] leading-[13px] text-[#616161]">
+                      You can reach me on WhatsApp
+                    </span>
+                    <FormControl>
+                      <Switch
+                        {...field}
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                  </div>
                   <FormDescription className="text-[10px] lato-med text-[#a7a7a7] leading-[12px]">
                     Uncheck to opt-out of upcoming meetings and offer alerts
                   </FormDescription>

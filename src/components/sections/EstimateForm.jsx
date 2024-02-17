@@ -19,15 +19,8 @@ import { Input } from "../ui/input";
 import * as z from "zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-type RefCallBack = (instance: HTMLButtonElement | null) => void;
+import toast, { Toaster } from "react-hot-toast";
 
-interface SwitchProps {
-  onChange: (...event: any[]) => void;
-  value: boolean;
-  disabled?: boolean;
-  name: string;
-  ref: RefCallBack;
-}
 const EstimateForm = () => {
   const percentage = 30;
   const [step, setStep] = useState(1);
@@ -54,45 +47,44 @@ const EstimateForm = () => {
   const crockeryUnitLimit = useMemo(() => otherLimit, []);
 
   const handleWardrobeChange = useCallback(
-    (newValue: number) => {
+    (newValue) => {
       const updatedWardrobeCount = Math.min(newValue, wardrobeLimit);
-
-      // Ensure the updated value does not exceed the general limit for all other cases
       setWardrobe((prevWardrobe) => Math.max(0, updatedWardrobeCount));
     },
     [wardrobeLimit]
   );
-  const handleEntertainmentUnitChange = useCallback((newValue: number) => {
-    const updatedValue = Math.min(newValue, otherLimit);
 
-    // Ensure the updated value does not go below zero
-    setEntertainmentUnit((prev) => Math.max(0, updatedValue));
-  }, []);
+  const handleEntertainmentUnitChange = useCallback(
+    (newValue) => {
+      const updatedValue = Math.min(newValue, otherLimit);
+      setEntertainmentUnit((prev) => Math.max(0, updatedValue));
+    },
+    [otherLimit]
+  );
 
-  const handleStudyUnitChange = useCallback((newValue: number) => {
-    const updatedValue = Math.min(newValue, otherLimit);
+  const handleStudyUnitChange = useCallback(
+    (newValue) => {
+      const updatedValue = Math.min(newValue, otherLimit);
+      setStudyUnit((prev) => Math.max(0, updatedValue));
+    },
+    [otherLimit]
+  );
 
-    // Ensure the updated value does not go below zero
-    setStudyUnit((prev) => Math.max(0, updatedValue));
-  }, []);
-
-  const handleCrockeryUnitChange = useCallback((newValue: number) => {
-    const updatedValue = Math.min(newValue, otherLimit);
-
-    // Ensure the updated value does not go below zero
-    setCrockeryUnit((prev) => Math.max(0, updatedValue));
-  }, []);
+  const handleCrockeryUnitChange = useCallback(
+    (newValue) => {
+      const updatedValue = Math.min(newValue, otherLimit);
+      setCrockeryUnit((prev) => Math.max(0, updatedValue));
+    },
+    [otherLimit]
+  );
 
   const handleNextButton = useCallback(() => {
-    // Your existing logic
-    if (step <= 2) setStep((prevStep) => prevStep + 1);
+    if (step < 3) setStep((prevStep) => prevStep + 1);
   }, [step]);
 
   const handleBackButton = useCallback(() => {
-    // Your existing logic
     setStep((prevStep) => prevStep - 1);
   }, []);
-  const { handleSubmit, register } = useForm();
   const formSchema = z.object({
     name: z.string().min(2, {
       message: "Name must be atleast 2 characters",
@@ -100,28 +92,84 @@ const EstimateForm = () => {
     email: z.string().email({
       message: "Please enter a valid email address",
     }),
-    mobileNumber: z.number().refine((value) => value.toString.length === 10, {
+    mobileNumber: z.string().refine((value) => value.length === 10, {
       message: "Mobile number should contain 10 digits",
     }),
 
-    whatsapp: z.string(),
-    pincode: z.number(),
+    whatsapp: z.boolean().default(true),
+    pincode: z.string(),
   });
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      mobileNumber: "",
+      whatsapp: true,
+      pincode: "",
+    },
   });
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    // Extract specific values from data
-    const { name, email, mobileNumber, whatsapp } = data as {
-      name: string;
-      email: string;
-      mobileNumber: string;
-      whatsapp: boolean;
-      pincode: number;
+  const onSubmit = async (data) => {
+    toast.loading("Submitting!...", {
+      icon: "◌",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+    const { name, email, mobileNumber, whatsapp, pincode } = data;
+    const estimate = {
+      name,
+      email,
+      mobileNumber,
+      whatsapp,
+      pincode,
+      selectedFloorplan,
+      selectedPurpose,
+      kitchen,
+      wardrobe,
+      entertainmentUnit,
+      studyUnit,
+      crockeryUnit,
     };
-
+    console.log({
+      name,
+      email,
+      mobileNumber,
+      whatsapp,
+      pincode,
+      selectedFloorplan,
+      selectedPurpose,
+      kitchen,
+      wardrobe,
+      entertainmentUnit,
+      studyUnit,
+      crockeryUnit,
+    });
+    try {
+      const response = await fetch("/api/sendEstimateEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(estimate),
+      });
+      toast.dismiss();
+      toast("We will reach out to you soon!", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log("Error sending form data:", error);
+    }
     // Your custom submission logic
-    console.log({ name, email, mobileNumber, whatsapp });
   };
   useEffect(() => {
     console.log(selectedFloorplan);
@@ -131,6 +179,8 @@ const EstimateForm = () => {
 
   return (
     <div className="flex flex-col bg-gray-100/50 mb-10">
+      <Toaster />
+
       <div className="flex items-center justify-center text-center  flex-col bg-gray-100/50 p-5 gap-4">
         <div className="text-[#222] text-[24px] font-bold leading-[24px] ">
           <h3>
@@ -417,7 +467,10 @@ const EstimateForm = () => {
                     We&#39;ll reach out to you soon!
                   </h4>
                   <Form {...form}>
-                    <form className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm lg:min-w-[400px]">
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-8 placeholder:text-[#bfbfbf]/85 text-[#474A50] lato-med leading-normal text-sm lg:min-w-[400px]"
+                    >
                       <FormField
                         control={form.control}
                         name="name"
@@ -491,7 +544,11 @@ const EstimateForm = () => {
                                 <span className="font-bold text-[11px] leading-[13px] text-[#616161]">
                                   You can reach me on WhatsApp
                                 </span>
-                                <Switch {...field} />
+                                <Switch
+                                  {...field}
+                                  checked={field.value}
+                                  onCheckedChange={field.onChange}
+                                />
                               </div>
                             </FormControl>
                             <FormDescription className="text-[10px] lato-med text-[#a7a7a7] leading-[12px]">
@@ -519,15 +576,12 @@ const EstimateForm = () => {
                           </FormItem>
                         )}
                       />
-                      {/* <Button
+                      <Button
                         type="submit"
                         className="bg-[#618365] hover:bg-[#618365]/80 rounded-[6px]border border-solid border-[rgba(231,28,36,0.00)] w-full py-[11px]"
                       >
-                        Book Design Session
-                        <span className="bg-[#FFC700] text-[#1E1E1E] rounded-[2px] py-1 px-2.5 font-bold tracking-[-0.12px] leading-[10px] text-[10px] ml-[12.5px]">
-                          FREE
-                        </span>
-                      </Button> */}
+                        Submit
+                      </Button>
                     </form>
                   </Form>
                 </div>
@@ -559,12 +613,13 @@ const EstimateForm = () => {
             Back
           </Button>
           <Button
+            type="button"
             variant="primary"
             disabled={nextButtonDisabled}
             className="w-[120px] font-bold text-xl py-6 px-12"
             onClick={handleNextButton}
           >
-            {step == 3 ? "Submit" : "Next"}
+            Next
           </Button>
         </div>
       </div>
