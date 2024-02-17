@@ -77,7 +77,7 @@ const Page = () => {
       title: " ",
       desc: " ",
       img: [],
-      lottie: <Lottie options={defaultOptions} height={300} width={300} />,
+      lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
       title: "Contemporary Oasis Bedroom Design",
@@ -138,25 +138,20 @@ const Page = () => {
             initial={{ scale: 0, opacity: 1 }}
             style={{ scale, opacity }}
           />
-          {/* <motion.div
-            style={{ opacity: hOpacity, position: hpos }}
-            className="text-black text-4xl font-bold drop-shadow-lg fixed top-[40%] left-1/2 m-auto"
-          >
-            Modular Kitchen
-          </motion.div> */}
+
           <motion.div
-            className="absolute z-0 bottom-[10%] right-[20%] p-5 rounded-md w-[350px] bg-white"
+            className="absolute z-0 bottom-[10%] right-[20%] p-5 rounded-md w-[400px] bg-white"
             style={{ opacity: hOpacity }}
           >
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Derrevo&#39;s Expertise in Transformative Kitchen Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Enhance the focal point of your home by relying on Derrevo to
+              revamp your kitchen. Whether you&#39;re hosting casual coffee
+              meet-ups or elaborate dinner parties, our extensive design and
+              installation services guarantee that your kitchen seamlessly
+              combines style and practicality. Are you ready for the makeover?
             </p>
           </motion.div>
         </div>
@@ -205,29 +200,26 @@ const Page = () => {
           <Footer />
         </div>
       </div>
-      <div className="block lg:hidden relative">
-        <Navbar />
+      <div className="flex flex-col items-center w-full lg:hidden relative">
+        <div className="w-full">
+          <Navbar />
+        </div>
         <motion.div
-          className={`${
-            opacity.get() == 0 ? "relative" : "sticky"
-          } h-screen w-screen bg-[url(/pages/1.jpg)] bg-top bg-cover inset-0 -z-10`}
-          // style={{ position }}
-        />
-        <motion.div
-          className="absolute z-0 top-60 right-[20%] p-5 rounded-md w-[350px] bg-white"
+          className=" z-0  p-20 bg-green-300/30 rounded-md w-auto "
           style={{ opacity: hOpacity }}
         >
           <h3 className="font-bold text-3xl leading-loose tracking-widest">
-            Modular Kitchen Designs
+            Derrevo&#39;s Expertise in Transformative Kitchen Designs
           </h3>
           <p className="text-gray-600 p-10 pl-0">
-            Elevate the heart of your home by entrusting Derrevo to transform
-            your kitchen. Whether it&#39;s casual coffee gatherings or elaborate
-            dinner parties, our comprehensive design and installation services
-            ensure your kitchen becomes a blend of style and functionality. Are
-            you prepared for the upgrade?
+            Enhance the focal point of your home by relying on Derrevo to revamp
+            your kitchen. Whether you&#39;re hosting casual coffee meet-ups or
+            elaborate dinner parties, our extensive design and installation
+            services guarantee that your kitchen seamlessly combines style and
+            practicality. Are you ready for the makeover?
           </p>
         </motion.div>
+        <Lottie options={defaultOptions} />
 
         <div className="w-full text-black   max-w-7xl flex flex-wrap mx-auto relative gap-5 h-auto my-10 items-center justify-center p-5">
           <div className="col-span-12">
@@ -263,7 +255,7 @@ const Page = () => {
                     ))}
                   </Fading>
                 )}
-                {item.lottie}
+                {/* {item.lottie} */}
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
                 <p className="text-base text-gray-600">{item.desc}</p>
               </div>
