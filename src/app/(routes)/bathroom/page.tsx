@@ -7,7 +7,7 @@ import Image from "next/image";
 import Fading from "@/components/Carousel/Fading";
 import Carousel from "@/components/Carousel/Carousel";
 import Lottie from "react-lottie";
-import l1 from "../../../../public/pages/kitchen/4.json";
+import l1 from "../../../../public/pages/bathroom/15.json";
 const Page = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -38,40 +38,36 @@ const Page = () => {
 
   const data = [
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Designing a bathroom with a monochrome marvel aesthetic.",
       desc: "Size | 13' X 12'",
       img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
+        "/pages/bathroom/1.jpeg",
+        "/pages/bathroom/2.webp",
+        "/pages/bathroom/3.webp",
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Crafting a bathroom design inspired by Terrazzo Lagoon.      ",
       desc: "Size | 13' X 12'",
       img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
+        "/pages/bathroom/4.webp",
+        "/pages/bathroom/5.jpeg",
+        "/pages/bethroom/6.webp",
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "enchanted garden theme inpired bathroom design",
       desc: "Size | 13' X 12'",
       img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
+        "/pages/bathroom/7.jpeg",
+        "/pages/bathroom/8.jpeg",
+        "/pages/bathroom/9.webp",
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Spruce Mirrored Bathroom Cabinet",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/bathroom/10.webp"],
     },
     {
       title: " ",
@@ -80,40 +76,24 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Elegance Single Shutter Mirrored Bathroom",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/bathroom/11.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Muse Common Area Vanity Unit",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/bathroom/12.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Gleam Bathroom Cabinet with Open Storage ",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/bathroom/13.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Opulence Extra Large Master Bathroom",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/bathroom/14.jpeg"],
     },
   ];
 
@@ -144,28 +124,27 @@ const Page = () => {
             style={{ opacity: hOpacity }}
           >
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Derrevo&#39;s Expertise in Transformative Kitchen Designs
+              Derrevo&#39;s Expertise in Transformative Bathroom Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Enhance the focal point of your home by relying on Derrevo to
-              revamp your kitchen. Whether you&#39;re hosting casual coffee
-              meet-ups or elaborate dinner parties, our extensive design and
-              installation services guarantee that your kitchen seamlessly
-              combines style and practicality. Are you ready for the makeover?
+              Designing a bathroom involves achieving an ideal blend of both
+              aesthetics and practicality. With thoughtful planning and
+              creativity, it&#39;s possible to craft a space that not only looks
+              beautiful but also serves its purpose effectively.
             </p>
           </motion.div>
         </div>
         <div className="w-full text-black   max-w-7xl grid grid-cols-12 mx-auto relative gap-5 h-auto my-10">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Bathroom Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Creating a well-designed bathroom involves striking the right
+              balance between aesthetics and functionality. Through careful
+              planning and a touch of creativity, it&#39;s possible to develop a
+              space that is not just visually appealing but also serves its
+              purpose effectively.
             </p>
           </div>
           {data.map((item, index) => (

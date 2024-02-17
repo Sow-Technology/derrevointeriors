@@ -7,7 +7,7 @@ import Image from "next/image";
 import Fading from "@/components/Carousel/Fading";
 import Carousel from "@/components/Carousel/Carousel";
 import Lottie from "react-lottie";
-import l1 from "../../../../public/pages/kitchen/4.json";
+import l1 from "../../../../public/pages/livingroom/5.json";
 const Page = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -38,40 +38,20 @@ const Page = () => {
 
   const data = [
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Chic Contrast Open-Plan Living Room Design",
+      img: ["/pages/livingroom/1.webp", "/pages/livingroom/1.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Retro Revival Living Room Design",
+      img: ["/pages/livingroom/2.jpeg", "/pages/livingroom/2.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Pastel Paradise Open-Plan Living Room",
+      img: ["/pages/livingroom/3.webp", "/pages/livingroom/3.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Teal Treasures Living Room Design",
+      img: ["/pages/livingroom/4.jpeg", "/pages/livingroom/4.jpeg"],
     },
     {
       title: " ",
@@ -80,40 +60,21 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Bohemian Jungle Living Room Design",
+      img: ["/pages/livingroom/6.jpeg", "/pages/livingroom/6.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Urban Sunshine Living Room Design",
+      img: ["/pages/livingroom/7.webp", "/pages/livingroom/7.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Urban Sunshine Living Room Design",
+      img: ["/pages/livingroom/8.jpeg", "/pages/livingroom/8.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Artsy Opulence Living Room Design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/livingroom/9.webp", "/pages/livingroom/9.webp"],
     },
   ];
 
@@ -144,28 +105,31 @@ const Page = () => {
             style={{ opacity: hOpacity }}
           >
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Derrevo&#39;s Expertise in Transformative Kitchen Designs
+              Unveiling Your Style: Living Room Designs for Every Taste
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Enhance the focal point of your home by relying on Derrevo to
-              revamp your kitchen. Whether you&#39;re hosting casual coffee
-              meet-ups or elaborate dinner parties, our extensive design and
-              installation services guarantee that your kitchen seamlessly
-              combines style and practicality. Are you ready for the makeover?
+              Living room designs serve as a canvas for expressing personal
+              style and preferences. Whether embracing a modern, minimalist vibe
+              or opting for a cozy, traditional ambiance, the options are
+              limitless. Crafting a living space that seamlessly combines
+              functionality with style offers the ideal setting for relaxation,
+              entertaining guests, and cherishing moments with family.
             </p>
           </motion.div>
         </div>
         <div className="w-full text-black   max-w-7xl grid grid-cols-12 mx-auto relative gap-5 h-auto my-10">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Living Room Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Living room designs are a distinctive reflection of personal style
+              and taste. Whether you lean towards the modern and minimalist or
+              prefer the warmth of a cozy, traditional setting, the
+              possibilities are boundless. Creating a well-designed living room
+              opens the door to a space that is not only functional but also
+              stylish, perfect for relaxation, entertaining guests, and
+              cherished family moments.
             </p>
           </div>
           {data.map((item, index) => (
@@ -209,14 +173,15 @@ const Page = () => {
           style={{ opacity: hOpacity }}
         >
           <h3 className="font-bold text-3xl leading-loose tracking-widest">
-            Derrevo&#39;s Expertise in Transformative Kitchen Designs
+            Unveiling Your Style: Living Room Designs for Every Taste
           </h3>
           <p className="text-gray-600 p-10 pl-0">
-            Enhance the focal point of your home by relying on Derrevo to revamp
-            your kitchen. Whether you&#39;re hosting casual coffee meet-ups or
-            elaborate dinner parties, our extensive design and installation
-            services guarantee that your kitchen seamlessly combines style and
-            practicality. Are you ready for the makeover?
+            Living room designs serve as a canvas for expressing personal style
+            and preferences. Whether embracing a modern, minimalist vibe or
+            opting for a cozy, traditional ambiance, the options are limitless.
+            Crafting a living space that seamlessly combines functionality with
+            style offers the ideal setting for relaxation, entertaining guests,
+            and cherishing moments with family.
           </p>
         </motion.div>
         <Lottie options={defaultOptions} />
@@ -224,14 +189,16 @@ const Page = () => {
         <div className="w-full text-black   max-w-7xl flex flex-wrap mx-auto relative gap-5 h-auto my-10 items-center justify-center p-5">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Living Room Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Living room designs are a distinctive reflection of personal style
+              and taste. Whether you lean towards the modern and minimalist or
+              prefer the warmth of a cozy, traditional setting, the
+              possibilities are boundless. Creating a well-designed living room
+              opens the door to a space that is not only functional but also
+              stylish, perfect for relaxation, entertaining guests, and
+              cherished family moments.
             </p>
           </div>
           {data.map((item, index) => (

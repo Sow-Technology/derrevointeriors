@@ -7,7 +7,7 @@ import Image from "next/image";
 import Fading from "@/components/Carousel/Fading";
 import Carousel from "@/components/Carousel/Carousel";
 import Lottie from "react-lottie";
-import l1 from "../../../../public/pages/kitchen/4.json";
+import l1 from "../../../../public/pages/bedroom/5.json";
 const Page = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -38,40 +38,20 @@ const Page = () => {
 
   const data = [
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Candy Clouds Girls’ Bedroom",
+      img: ["/pages/bedroom/1.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Color-me-fun Unisex Kids’ Room",
+      img: ["/pages/bedroom/2.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Boisterously Beige Master Bedroom",
+      img: ["/pages/bedroom/3.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Bright and Bohemian Master Bedroom",
+      img: ["/pages/bedroom/4.jpeg"],
     },
     {
       title: " ",
@@ -80,40 +60,20 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Minimally Modern Guest Bedroom",
+      img: ["/pages/bedroom/6.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "Simply Contemporary Master Bedroom",
+      img: ["/pages/bedroom/7.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "A Tryst With Browns Master Bedroom",
+      img: ["/pages/bedroom/8.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
-      desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      title: "The Royal Welcome Guest Bedroom",
+      img: ["/pages/bedroom/9.webp"],
     },
   ];
 
@@ -144,28 +104,35 @@ const Page = () => {
             style={{ opacity: hOpacity }}
           >
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Derrevo&#39;s Expertise in Transformative Kitchen Designs
+              Crafting designs for bedrooms that blend comfort and style
+              seamlessly.
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Enhance the focal point of your home by relying on Derrevo to
-              revamp your kitchen. Whether you&#39;re hosting casual coffee
-              meet-ups or elaborate dinner parties, our extensive design and
-              installation services guarantee that your kitchen seamlessly
-              combines style and practicality. Are you ready for the makeover?
+              A bedroom should serve as a tranquil and rejuvenating sanctuary,
+              meticulously designed to enhance relaxation and promote restful
+              sleep. Opt for a soothing color palette characterized by soft,
+              neutral tones, instilling a sense of tranquility. Ensure the
+              furniture is both comfortable and practical, with the bed taking
+              center stage as the focal point. Additionally, personalize the
+              space by incorporating artwork or photographs to imbue the room
+              with a sense of individuality and ownership.
             </p>
           </motion.div>
         </div>
         <div className="w-full text-black   max-w-7xl grid grid-cols-12 mx-auto relative gap-5 h-auto my-10">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Bedroom Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              A bedroom is envisioned as a serene and calming retreat,
+              meticulously crafted to foster relaxation and a peaceful sleep
+              environment. Utilize a color scheme featuring soft, neutral tones
+              to instill a sense of tranquility. Prioritize comfortable and
+              functional furniture, with the bed serving as the central focus.
+              To make the space uniquely yours, consider adding personal touches
+              like artwork or photographs that reflect your individual style and
+              create a warm, inviting ambiance.
             </p>
           </div>
           {data.map((item, index) => (
@@ -209,14 +176,18 @@ const Page = () => {
           style={{ opacity: hOpacity }}
         >
           <h3 className="font-bold text-3xl leading-loose tracking-widest">
-            Derrevo&#39;s Expertise in Transformative Kitchen Designs
+            Crafting designs for bedrooms that blend comfort and style
+            seamlessly.
           </h3>
           <p className="text-gray-600 p-10 pl-0">
-            Enhance the focal point of your home by relying on Derrevo to revamp
-            your kitchen. Whether you&#39;re hosting casual coffee meet-ups or
-            elaborate dinner parties, our extensive design and installation
-            services guarantee that your kitchen seamlessly combines style and
-            practicality. Are you ready for the makeover?
+            A bedroom should serve as a tranquil and rejuvenating sanctuary,
+            meticulously designed to enhance relaxation and promote restful
+            sleep. Opt for a soothing color palette characterized by soft,
+            neutral tones, instilling a sense of tranquility. Ensure the
+            furniture is both comfortable and practical, with the bed taking
+            center stage as the focal point. Additionally, personalize the space
+            by incorporating artwork or photographs to imbue the room with a
+            sense of individuality and ownership.
           </p>
         </motion.div>
         <Lottie options={defaultOptions} />
@@ -224,14 +195,17 @@ const Page = () => {
         <div className="w-full text-black   max-w-7xl flex flex-wrap mx-auto relative gap-5 h-auto my-10 items-center justify-center p-5">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Bedroom Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              A bedroom is envisioned as a serene and calming retreat,
+              meticulously crafted to foster relaxation and a peaceful sleep
+              environment. Utilize a color scheme featuring soft, neutral tones
+              to instill a sense of tranquility. Prioritize comfortable and
+              functional furniture, with the bed serving as the central focus.
+              To make the space uniquely yours, consider adding personal touches
+              like artwork or photographs that reflect your individual style and
+              create a warm, inviting ambiance.
             </p>
           </div>
           {data.map((item, index) => (

@@ -7,7 +7,7 @@ import Image from "next/image";
 import Fading from "@/components/Carousel/Fading";
 import Carousel from "@/components/Carousel/Carousel";
 import Lottie from "react-lottie";
-import l1 from "../../../../public/pages/kitchen/4.json";
+import l1 from "../../../../public/pages/wardrobe/5.json";
 const Page = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -38,40 +38,24 @@ const Page = () => {
 
   const data = [
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Stately in Greige Walk-in Wardrobe",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/1.webp", "/pages/wardrobe/1.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "The Floral Escape white design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/2.webp", "/pages/wardrobe/2.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "The Grey wardrobe design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/3.webp", "/pages/wardrobe/3.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "A Tinge of Earth Design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/4.webp", "/pages/wardrobe/4.webp"],
     },
     {
       title: " ",
@@ -80,40 +64,24 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "The Grand Millennial Style Kids’ Wardrob",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/6.webp", "/pages/wardrobe/6.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Modern Meadow Master Wardrobe",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/7.jpeg", "/pages/wardrobe/7.jpeg"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Mallow Mauve Sliding Door Wardrobe",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/wardrobe/8.webp", "/pages/wardrobe/8.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Ocean Blue Lacquered Glass ",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/9.jpeg", "/pages/kitchen/9.jpeg"],
     },
   ];
 
@@ -144,28 +112,32 @@ const Page = () => {
             style={{ opacity: hOpacity }}
           >
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Derrevo&#39;s Expertise in Transformative Kitchen Designs
+              Elevate Your Bedroom Storage with Stylish Wardrobes
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Enhance the focal point of your home by relying on Derrevo to
-              revamp your kitchen. Whether you&#39;re hosting casual coffee
-              meet-ups or elaborate dinner parties, our extensive design and
-              installation services guarantee that your kitchen seamlessly
-              combines style and practicality. Are you ready for the makeover?
+              Wardrobes play a pivotal role in bedroom design by providing
+              storage and organization for clothing and personal items. They
+              come in various designs, from straightforward single-door units to
+              expansive multi-door armoires, constructed from materials like
+              wood, metal, or plastic and adaptable to diverse decor styles.
+              Elevate the functionality and aesthetics of your bedrooms by
+              integrating these essential pieces – shall we?
             </p>
           </motion.div>
         </div>
         <div className="w-full text-black   max-w-7xl grid grid-cols-12 mx-auto relative gap-5 h-auto my-10">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Wardrobe Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Wardrobes are indispensable furniture pieces, essential for
+              storing and organizing clothing and personal belongings in any
+              bedroom. From simple, single-door units to expansive, multi-door
+              armoires, they come in diverse materials such as wood, metal, or
+              plastic, and cater to a range of decor styles. Let&#39;s enhance
+              the functionality and aesthetic appeal of your bedrooms together,
+              shall we?
             </p>
           </div>
           {data.map((item, index) => (
@@ -209,14 +181,16 @@ const Page = () => {
           style={{ opacity: hOpacity }}
         >
           <h3 className="font-bold text-3xl leading-loose tracking-widest">
-            Derrevo&#39;s Expertise in Transformative Kitchen Designs
+            Elevate Your Bedroom Storage with Stylish Wardrobes
           </h3>
           <p className="text-gray-600 p-10 pl-0">
-            Enhance the focal point of your home by relying on Derrevo to revamp
-            your kitchen. Whether you&#39;re hosting casual coffee meet-ups or
-            elaborate dinner parties, our extensive design and installation
-            services guarantee that your kitchen seamlessly combines style and
-            practicality. Are you ready for the makeover?
+            Wardrobes play a pivotal role in bedroom design by providing storage
+            and organization for clothing and personal items. They come in
+            various designs, from straightforward single-door units to expansive
+            multi-door armoires, constructed from materials like wood, metal, or
+            plastic and adaptable to diverse decor styles. Elevate the
+            functionality and aesthetics of your bedrooms by integrating these
+            essential pieces – shall we?
           </p>
         </motion.div>
         <Lottie options={defaultOptions} />
@@ -224,14 +198,16 @@ const Page = () => {
         <div className="w-full text-black   max-w-7xl flex flex-wrap mx-auto relative gap-5 h-auto my-10 items-center justify-center p-5">
           <div className="col-span-12">
             <h3 className="font-bold text-3xl leading-loose tracking-widest">
-              Modular Kitchen Designs
+              Wardrobe Designs
             </h3>
             <p className="text-gray-600 p-10 pl-0">
-              Elevate the heart of your home by entrusting Derrevo to transform
-              your kitchen. Whether it&#39;s casual coffee gatherings or
-              elaborate dinner parties, our comprehensive design and
-              installation services ensure your kitchen becomes a blend of style
-              and functionality. Are you prepared for the upgrade?
+              Wardrobes are indispensable furniture pieces, essential for
+              storing and organizing clothing and personal belongings in any
+              bedroom. From simple, single-door units to expansive, multi-door
+              armoires, they come in diverse materials such as wood, metal, or
+              plastic, and cater to a range of decor styles. Let&#39;s enhance
+              the functionality and aesthetic appeal of your bedrooms together,
+              shall we?
             </p>
           </div>
           {data.map((item, index) => (

@@ -47,31 +47,27 @@ const Page = () => {
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Luminous Loft Master Bedroom Design",
       desc: "Size | 13' X 12'",
       img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
+        "/pages/kitchen/5.webp",
+        "/pages/kitchen/6.jpeg",
+        "/pages/kitchen/7.jpeg",
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Coastal Chic Modern Kitchen Design",
       desc: "Size | 13' X 12'",
       img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
+        "/pages/kitchen/8.webp",
+        "/pages/kitchen/9.webp",
+        "/pages/kitchen/10.webp",
       ],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Sleek Seafoam Modern Kitchen Design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/11.webp"],
     },
     {
       title: " ",
@@ -80,40 +76,24 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Sleek Serenity Modern Kitchen Design",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/12.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Flawless White Straight Modular Kitchen",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/13.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Vivid White U-Shaped Modular Kitchen",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/14.webp"],
     },
     {
-      title: "Contemporary Oasis Bedroom Design",
+      title: "Gainsboro Modular Island Kitchen",
       desc: "Size | 13' X 12'",
-      img: [
-        "/pages/kitchen/1.jpeg",
-        "/pages/kitchen/2.webp",
-        "/pages/kitchen/3.webp",
-      ],
+      img: ["/pages/kitchen/15.webp"],
     },
   ];
 
