@@ -205,7 +205,7 @@ const Page = () => {
           <Navbar />
         </div>
         <motion.div
-          className=" z-0  p-20 bg-green-300/30 rounded-md w-auto "
+          className=" z-0  p-20 bg-green-300/30 rounded-xl w-auto my-5 "
           style={{ opacity: hOpacity }}
         >
           <h3 className="font-bold text-3xl leading-loose tracking-widest">
