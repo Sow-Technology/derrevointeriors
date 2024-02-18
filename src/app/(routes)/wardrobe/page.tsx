@@ -81,7 +81,7 @@ const Page = () => {
     {
       title: "Ocean Blue Lacquered Glass ",
       desc: "Size | 13' X 12'",
-      img: ["/pages/kitchen/9.jpeg", "/pages/kitchen/9.jpeg"],
+      img: ["/pages/wardrobe/9.jpeg", "/pages/wardrobe/9.jpeg"],
     },
   ];
 
