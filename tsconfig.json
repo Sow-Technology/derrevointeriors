@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Carousel/Fading.jsx", "src/components/sections/Hero.jsx", "src/components/sections/EstimateForm.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Carousel/Fading.jsx", "src/components/sections/Hero.jsx", "src/components/sections/EstimateForm.jsx", "src/app/(routes)/design-gallery/page.jsx"],
   "exclude": ["node_modules"]
 }
