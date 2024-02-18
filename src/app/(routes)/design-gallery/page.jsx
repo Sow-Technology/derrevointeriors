@@ -44,7 +44,7 @@ const GalleryItem = [
   },
   {
     title: "Bathroom",
-    imgUrl: "/gallery/4.webp",
+    imgUrl: "/gallery/4.jpeg",
     url: "/bathroom",
   },
   {
@@ -295,7 +295,7 @@ const Page = () => {
             search ends with HomeLane. Explore comprehensive interior design
             services tailored to your needs.
           </p>
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-5 items-center justify-center">
             {GalleryItem.map((item, index) => (
               <Link href={item.url} key={index}>
                 <div
@@ -310,7 +310,7 @@ const Page = () => {
                       className="rounded-[8px] shadow-lg max-h-[300px] aspect-video"
                     />
                   </div>
-                  <div className="absolute bottom-20 text-white bg-black/40 w-full  left-0 drop-shadow-xl">
+                  <div className="absolute bottom-0 text-white bg-black/60 w-full  left-0 drop-shadow-xl">
                     {item.title}
                   </div>
                 </div>
