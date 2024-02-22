@@ -25,6 +25,7 @@ export default function Home() {
       <DesignSession />
       <Interior />
       <Steps />
+
       <Footer />
     </div>
   );
