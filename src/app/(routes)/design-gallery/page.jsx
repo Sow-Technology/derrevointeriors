@@ -25,37 +25,68 @@ import Link from "next/link";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Carousel from "@/components/Carousel/Carousel";
 import toast, { Toaster } from "react-hot-toast";
+import Lottie from "react-lottie";
+import l1 from "../../../../public/pages/kitchen/4.json";
+import l2 from "../../../../public/pages/bedroom/5.json";
+import l3 from "../../../../public/pages/livingroom/5.json";
+import l4 from "../../../../public/pages/bathroom/15.json";
+import l5 from "../../../../public/pages/wardrobe/10.json";
+import l6 from "../../../../public/2.json";
 
 const GalleryItem = [
   {
     title: "Modular Kitchen",
-    imgUrl: "/gallery/1.webp",
     url: "/modular-kitchen",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l1,
+    },
   },
   {
     title: "Bedroom",
-    imgUrl: "/gallery/2.webp",
     url: "/bedroom",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l2,
+    },
   },
   {
     title: "Living Room",
-    imgUrl: "/gallery/3.webp",
     url: "/living-room",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l3,
+    },
   },
   {
     title: "Bathroom",
-    imgUrl: "/gallery/4.jpeg",
     url: "/bathroom",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l4,
+    },
   },
   {
-    title: "Space Saving Furniture",
-    imgUrl: "/gallery/5.webp",
-    url: "",
+    title: "Wardrobe",
+    url: "/wardrobe",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l5,
+    },
   },
   {
     title: "Home Office",
-    imgUrl: "/gallery/6.jpg",
     url: "",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l6,
+    },
   },
 ];
 const images = [
@@ -82,6 +113,11 @@ const images2 = [
   "/Carousel/18.jpg",
 ];
 const Page = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: l1,
+  };
   const formSchema = z.object({
     name: z.string().min(2, {
       message: "Name must be atleast 2 characters",
@@ -150,13 +186,6 @@ const Page = () => {
       </div>
       <div className="w-full flex flex-col lg:flex-row gap-5 justify-end lg:gap-[20%] p-8 bg-[#618365]/80">
         <div className="px-10 flex items-center justify-center h-full my-auto">
-          {/* <Image
-            src="/hero.svg"
-            alt="hero image"
-            height={500}
-            width={500}
-            className="h-full w-full my-auto self-center"
-          /> */}
           <h2 className="font-bold tracking-wide leading-10 max-w-[550px] drop-shadow-2xl text-4xl text-white">
             Designing Dreams: Crafting Inspirational Spaces for Your Dream Home
           </h2>
@@ -295,20 +324,14 @@ const Page = () => {
             search ends with HomeLane. Explore comprehensive interior design
             services tailored to your needs.
           </p>
-          <div className="flex flex-wrap gap-5 items-center justify-center">
+          <div className="flex flex-wrap gap-10 gap-y-20 items-center justify-between">
             {GalleryItem.map((item, index) => (
               <Link href={item.url} key={index}>
                 <div
-                  className={`h-[300px] relative rounded-[8px] overflow-clip`}
+                  className={`h-[300px] w-[300px] relative rounded-[8px] overflow-clip`}
                 >
                   <div>
-                    <Image
-                      src={item.imgUrl}
-                      alt=""
-                      width={400}
-                      height={400}
-                      className="rounded-[8px] shadow-lg max-h-[300px] aspect-video"
-                    />
+                    <Lottie options={item.defaultOptions} />
                   </div>
                   <div className="absolute bottom-0 text-white bg-black/60 w-full  left-0 drop-shadow-xl">
                     {item.title}

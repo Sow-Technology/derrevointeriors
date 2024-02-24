@@ -92,19 +92,14 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex max-w-7xl mx-auto items-center gap-[30px] lg:items-start justify-center py-20 lg:gap-[125px] h-max  flex-col">
+    <div className="flex max-w-7xl mx-auto items-center  lg:items-start justify-center  h-max  flex-col">
       <div className="w-full">
         <Navbar />
       </div>
       <Toaster />
-      <div className="flex lg:flex-row flex-col my-20">
+      <div className="flex lg:flex-row flex-col my-20 lg:gap-[125px] gap-[30px]">
         <div className="px-10 flex items-center justify-center h-full my-auto">
-          <Lottie
-            options={defaultOptions}
-            height={500}
-            width={500}
-            className="lg:h-[500px] lg:w-[500px] w-[300px] h-[300px]"
-          />
+          <Lottie options={defaultOptions} className=" w-[300px] h-[300px]" />
         </div>
         <div className="p-10">
           <h4 className="text-[#474A50] font-[700] leading-[25px] text-[24px] mb-3">

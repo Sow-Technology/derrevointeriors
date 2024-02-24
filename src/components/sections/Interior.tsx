@@ -70,7 +70,7 @@ const Interior = () => {
       <div className="text-[#222] text-[24px] font-bold leading-[24px] mb-10 px-10">
         <h3>End-to-end interior solutions</h3>
       </div>
-      <div className="flex items-center justify-betweens lg:justify-start w-full flex-wrap gap-[20px] lg:gap-x-[159px] lg:gap-y-[60px] mb-[68px]">
+      <div className="flex items-center justify-between lg:justify-start w-full flex-wrap gap-[20px] lg:gap-x-[159px] lg:gap-y-[60px] mb-[68px] mx-auto">
         {InteriorItem.map((item) => (
           <div
             key={item.title}

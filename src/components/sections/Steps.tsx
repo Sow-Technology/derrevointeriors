@@ -1,7 +1,71 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Carousel from "../Carousel/Carousel";
+import Lottie from "react-lottie";
+import l1 from "../../../public/pages/kitchen/4.json";
+import l2 from "../../../public/pages/bedroom/5.json";
+import l3 from "../../../public/pages/livingroom/5.json";
+import l4 from "../../../public/pages/bathroom/15.json";
+import l5 from "../../../public/pages/wardrobe/10.json";
+import l6 from "../../../public/2.json";
+import Link from "next/link";
 
+const GalleryItem = [
+  {
+    title: "Modular Kitchen",
+    url: "/modular-kitchen",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l1,
+    },
+  },
+  {
+    title: "Bedroom",
+    url: "/bedroom",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l2,
+    },
+  },
+  {
+    title: "Living Room",
+    url: "/living-room",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l3,
+    },
+  },
+  {
+    title: "Bathroom",
+    url: "/bathroom",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l4,
+    },
+  },
+  {
+    title: "Wardrobe",
+    url: "/wardrobe",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l5,
+    },
+  },
+  {
+    title: "Home Office",
+    url: "/design-gallery",
+    defaultOptions: {
+      loop: true,
+      autoplay: true,
+      animationData: l6,
+    },
+  },
+];
 interface Step {
   name: string;
   description: string;
@@ -24,29 +88,6 @@ const Steps: React.FC = () => {
       line: false,
     },
   ];
-  const images = [
-    "/Carousel/20.jpg",
-    "/Carousel/2.jpg",
-    "/Carousel/3.jpg",
-    "/Carousel/4.jpg",
-    "/Carousel/5.jpg",
-    "/Carousel/6.jpg",
-    "/Carousel/7.jpg",
-    "/Carousel/8.jpg",
-    "/Carousel/9.jpg",
-  ];
-  const images2 = [
-    "/Carousel/10.jpg",
-    "/Carousel/11.jpg",
-    "/Carousel/12.jpg",
-    "/Carousel/13.jpg",
-    "/Carousel/14.jpg",
-    "/Carousel/15.jpg",
-    "/Carousel/16.jpg",
-    "/Carousel/17.jpg",
-    "/Carousel/18.jpg",
-    "/Carousel/19.jpg",
-  ];
 
   const [active, setActive] = useState<number>(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -64,48 +105,24 @@ const Steps: React.FC = () => {
   }, [stepsItem.length]);
 
   return (
-    <div className="max-w-7xl mx-auto overflow-hidden my-20">
-      <div>
-        <h3 className="text-[#222] text-center text-2xl font-bold mb-[69px]">
-          Transform your entire home interior with just 3 simple steps.
-        </h3>
-        <div
-          className={`flex justify-center items-center ml-[40%] relative pb-20 `}
-        >
-          {stepsItem.map((step, i) => (
-            <div key={i} className="flex w-full items-start flex-col">
-              <div className="flex w-full items-center h-[41px]">
-                <div
-                  className={`h-[41px] w-[41px] rounded-full flex items-center justify-center p-4 font-bold leading-[29px] text-xl ${
-                    active >= i ? "bg-[#618365] text-white" : "bg-[#D9D9D9]"
-                  }`}
-                >
-                  {i + 1}
+    <div className="max-w-7xl mx-auto overflow-hidden my-20 p-5">
+      <div className="text-[#222] text-[24px] font-bold leading-[50px] mb-10 text-center flex items-center justify-center flex-col gap-7">
+        <h3 className="text-5xl font-bold">Our Designs</h3>
+        <div className="flex flex-wrap gap-10 gap-y-20 items-center justify-between">
+          {GalleryItem.map((item, index) => (
+            <Link href={item.url} key={index}>
+              <div
+                className={`h-[300px] w-[300px] relative rounded-[8px] overflow-clip`}
+              >
+                <div>
+                  <Lottie options={item.defaultOptions} />
                 </div>
-                {step.line && (
-                  <div
-                    className={`h-[5px] w-full ${
-                      active > i ? "bg-[#618365]" : "bg-[#D9D9D9]"
-                    }`}
-                  />
-                )}
+                <div className="absolute bottom-0 text-white bg-black/60 w-full  left-0 drop-shadow-xl">
+                  {item.title}
+                </div>
               </div>
-              <div className="absolute top-10 left-0 text-2xl font-bold leading-[29px] mt-[14px] w-[80%]">
-                {active === i && <div>{step.name}</div>}
-                {active === i && (
-                  <div className="text-base">{step.description}</div>
-                )}
-              </div>
-            </div>
+            </Link>
           ))}
-        </div>
-      </div>
-      <div>
-        <div className="mt-20 lg:mt-0 lg:mb-[69px]">
-          <Carousel images={images} />
-        </div>
-        <div>
-          <Carousel images={images2} />
         </div>
       </div>
     </div>

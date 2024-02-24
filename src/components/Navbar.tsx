@@ -38,6 +38,10 @@ const NavItem = [
     name: "Bathroom",
     link: "/bathroom",
   },
+  {
+    name: "Magazine",
+    link: "/magazine",
+  },
 ];
 const Navbar: React.FC<NavbarProps> = ({ cutsomPage }) => {
   const [modalOpen, setModalOpen] = useState(false);

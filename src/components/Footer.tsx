@@ -163,6 +163,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+
       <div className="flex gap-x-[17px] my-[23px] items-center justify-end">
         {SocialIcons.map((item, index) => (
           <Link href={item.href} key={index}>
@@ -175,6 +176,12 @@ const Footer = () => {
             />
           </Link>
         ))}
+      </div>
+      <div className="w-full text-center mb-20 bg-green-500/50 py-10">
+        Website designed & developed by{" "}
+        <Link href="https://sowtech.in/">
+          <b>Sow Tech</b>🔗
+        </Link>
       </div>
     </div>
   );

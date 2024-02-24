@@ -59,7 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     prevArrow: <PrevArrow onClick={function (): void {}} />,
   };
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="max-h-[350px]">
       {images.map((image, index) => (
         <div key={index} className="h-[300px] w-[280px] p-4 object-cover">
           <Image

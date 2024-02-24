@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
         {ChooseItem.map((item) => (
           <div
             key={item.title}
-            className="flex items-center justify-center flex-col p-1"
+            className="flex items-center justify-center flex-col p-1 gap-5 text-left"
           >
             <Image
               src={item.icon}
@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
               height={83}
               className="h-[83px] w-auto"
             />
-            <span className="text-xs text-center font-bold text-[#212529] leading-[19px]">
+            <span className="text-xs text-left font-bold text-[#212529] leading-[19px]">
               {item.title}
             </span>
           </div>

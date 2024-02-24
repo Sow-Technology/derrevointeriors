@@ -7,7 +7,7 @@ import Image from "next/image";
 import Fading from "@/components/Carousel/Fading";
 import Carousel from "@/components/Carousel/Carousel";
 import Lottie from "react-lottie";
-import l1 from "../../../../public/pages/wardrobe/5.json";
+import l1 from "../../../../public/pages/wardrobe/10.json";
 const Page = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -64,7 +64,7 @@ const Page = () => {
       lottie: <Lottie options={defaultOptions} height={400} width={350} />,
     },
     {
-      title: "The Grand Millennial Style Kids’ Wardrob",
+      title: "The Grand Millennial Style Kids’ Wardrobe",
       desc: "Size | 13' X 12'",
       img: ["/pages/wardrobe/6.webp", "/pages/wardrobe/6.webp"],
     },
