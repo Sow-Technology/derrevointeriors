@@ -14,7 +14,6 @@ const transporter = nodemailer.createTransport({
 export async function POST(req, res) {
   if (req.method === "POST") {
     const formData = await req.json();
-    console.log(formData);
     const mailOptions = {
       from: process.env.FROM_EMAIL,
       to: process.env.TO_EMAIL,
@@ -38,13 +37,11 @@ export async function POST(req, res) {
 
     try {
       await transporter.sendMail(mailOptions);
-      console.log("Email sent successfully");
       return NextResponse.json(
         { message: "Email sent successfully" },
         { status: 200 }
       );
     } catch (error) {
-      console.error("Error sending email:", error);
       return NextResponse.json(
         { message: "Internal Server Error" },
         { status: 500 }

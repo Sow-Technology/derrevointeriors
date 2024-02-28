@@ -83,12 +83,9 @@ const Hero = () => {
         },
       });
       const result = await response.json();
-      console.log(result);
     } catch (error) {
       console.log("Error sending form data:", error);
     }
-    // Your custom submission logic
-    console.log({ name, email, mobileNumber, whatsapp, pincode });
   };
 
   return (

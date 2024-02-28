@@ -172,11 +172,9 @@ const Page = () => {
         },
       });
       const result = await response.json();
-      console.log(result);
     } catch (error) {
       console.log("Error sending form data:", error);
     }
-    console.log({ name, email, mobileNumber, whatsapp, pincode });
   };
 
   return (

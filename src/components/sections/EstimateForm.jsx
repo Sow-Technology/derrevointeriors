@@ -133,20 +133,7 @@ const EstimateForm = () => {
       studyUnit,
       crockeryUnit,
     };
-    console.log({
-      name,
-      email,
-      mobileNumber,
-      whatsapp,
-      pincode,
-      selectedFloorplan,
-      selectedPurpose,
-      kitchen,
-      wardrobe,
-      entertainmentUnit,
-      studyUnit,
-      crockeryUnit,
-    });
+
     try {
       const response = await fetch("/api/sendEstimateEmail", {
         method: "POST",
@@ -165,15 +152,11 @@ const EstimateForm = () => {
         },
       });
       const result = await response.json();
-      console.log(result);
     } catch (error) {
       console.log("Error sending form data:", error);
     }
-    // Your custom submission logic
   };
-  useEffect(() => {
-    console.log(selectedFloorplan);
-  }, [selectedFloorplan, selectedPurpose]);
+
   const backButtonDisabled = step == 1;
   const nextButtonDisabled = !step1Validation;
 
