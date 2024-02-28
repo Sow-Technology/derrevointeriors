@@ -179,7 +179,7 @@ const Footer = () => {
       </div>
       <div className="w-full text-center mb-20 bg-green-500/50 py-10">
         Website designed & developed by{" "}
-        <Link href="https://sowtech.in/">
+        <Link href="https://sowtech.in/contact">
           <b>Sow Tech</b>🔗
         </Link>
       </div>
