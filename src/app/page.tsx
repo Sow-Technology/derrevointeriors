@@ -11,11 +11,19 @@ import Steps from "@/components/sections/Steps";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import { useEffect, useState } from "react";
 const images = [
-  "/Carousel/20.jpg",
+  "/new/1.jpg",
+  "/new/2.jpg",
+  "/new/3.jpg",
+  "/new/4.jpg",
+  "/new/5.jpg",
+  "/new/6.jpg",
+   "/Carousel/20.jpg",
   "/Carousel/2.jpg",
   "/Carousel/3.jpg",
   "/Carousel/4.jpg",
   "/Carousel/5.jpg",
+ 
+ 
   "/Carousel/6.jpg",
   "/Carousel/7.jpg",
   "/Carousel/8.jpg",
@@ -28,10 +36,18 @@ const images2 = [
   "/Carousel/13.jpg",
   "/Carousel/14.jpg",
   "/Carousel/15.jpg",
+
   "/Carousel/16.jpg",
   "/Carousel/17.jpg",
   "/Carousel/18.jpg",
   "/Carousel/19.jpg",
+   "/new/7.jpg",
+  "/new/8.jpg",
+  "/new/9.jpg",
+  "/new/10.jpg",
+  "/new/11.jpg",
+  "/new/12.jpg",
+  "/new/13.jpg",
 ];
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

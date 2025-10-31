@@ -149,6 +149,12 @@ const Footer = () => {
                 FAQs
               </Link>
             </div>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <div className=" hover:scale-110 transition-transform inline-block">
+              <Link href="tel:+919844267219" className=" hover:scale-105 transition-transform">
+                Phone: +919844267219
+              </Link>
+            </div>
           </div>
         </div>
         <div>
@@ -176,12 +182,6 @@ const Footer = () => {
             />
           </Link>
         ))}
-      </div>
-      <div className="w-full text-center mb-20 bg-green-500/50 py-10">
-        Website designed & developed by{" "}
-        <Link href="https://sowtech.in/contact">
-          <b>Sow Tech</b>🔗
-        </Link>
       </div>
     </div>
   );
